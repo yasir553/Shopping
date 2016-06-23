@@ -1,0 +1,99 @@
+﻿<!DOCTYPE HTML>
+<!--
+    Retrospect by TEMPLATED
+    templated.co templatedco
+    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+<head>
+    <title>@ViewBag.Title</title><meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="~/assets/js/ie/html5shiv.js"></script><![endif]-->
+    <script src="~/Content/js/jquery.min.js"></script>
+        <script src="~/Content/js/skel.min.js"></script>
+        <script src="~/Content/js/skel-layers.min.js"></script>
+        <script src="~/Content/js/init.js"></script>
+   
+        <link rel="stylesheet" href="~/Content/css/skel.css" />
+        <link rel="stylesheet" href="~/Content/css/style.css" />
+    @Styles.Render("~/Assets/css/main.css")
+    @Scripts.Render("~/bundles/jquery")
+    <!--[if lte IE 8]><link rel="stylesheet" href="~/assets/css/ie8.css" /><![endif]-->
+    <!--[if lte IE 9]><link rel="stylesheet" href="~/assets/css/ie9.css" /><![endif]-->
+</head>
+<body class="landing" >
+    <!-- Header -->
+    <header id="header" class="alt">
+        <h1>@Html.ActionLink("Online Shopping Portal", "Index", "Home")</h1>
+        <a href="~/Home/Index/">Home</a>
+        <a href="~/Product/insertItem/">Inset Items</a>
+        <a href="~/Product/updateItem/">Update Item</a>
+        <a href="~/Product/deleteItem/">Delete Item</a>
+        <a href="#nav">Menu</a>
+
+    </header>
+    <!-- Nav -->
+    <nav id="nav">
+        <ul class="links">
+            <li>@Html.ActionLink("Online Shopping Portal", "Index", "Home")</li>
+            
+            <li><a  href="~/Log/logout/" onclick="myFunction()">Log Out</a></li>
+            
+        </ul>
+    </nav>
+@RenderBody()
+         <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <section class="4u 6u(medium) 12u$(small)">
+                    <h3>Muhammad Yasir</h3>
+                    <p>Founder and Cheif Executive Officer of the company</p>
+                    <p>Software Engineer</p>
+                    
+                </section>
+                <section class="4u 6u(medium) 12u$(small)">
+                    <h3> </h3>
+                    
+                    
+                </section>
+                <section class="4u$ 12u$(medium) 12u$(small)">
+                    <h3>Contact Us</h3>
+                    <ul class="icons">
+                        <li><a href="#" class="icon rounded fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="#" class="icon rounded fa-facebook"><span class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon rounded fa-pinterest"><span class="label">Pinterest</span></a></li>
+                        <li><a href="#" class="icon rounded fa-google-plus"><span class="label">Google+</span></a></li>
+                        <li><a href="#" class="icon rounded fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                    </ul>
+                    <ul class="tabular">
+                        <li>
+                            <h3>Address</h3>
+                            Somewhere on Earth, Milkyway, Universe.
+                        </li>
+                        <li>
+                            <h3>Mail</h3>
+                            <a href="#">yasir.khalid553@yahoo.com</a>
+                        </li>
+                        <li>
+                            <h3>Phone</h3>
+                            03234711686
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            <ul class="copyright">
+                <li>All rights reserved.</li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Footer -->
+    <!-- Scripts -->
+    <script src="~/assets/js/jquery.min.js"></script>
+    <script src="~/assets/js/skel.min.js"></script>
+    <script src="~/assets/js/util.js"></script>
+    <!--[if lte IE 8]><script src="~/assets/js/ie/respond.min.js"></script><![endif]-->
+    <script src="~/assets/js/main.js"></script>
+
+</body>
+</html>

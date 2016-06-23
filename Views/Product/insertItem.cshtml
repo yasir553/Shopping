@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "insertItem";
+    Layout = "~/Views/Shared/_adminSharedPage.cshtml";
+}
+<section id="main" class="wrapper">
+    <div class="container-form">
+
+        <header class="major">
+            <h2><br>Enter Item</h2>
+        </header>
+        <section>
+            <form method="post" action="~/Product/insertItem/" enctype="multipart/form-data">
+                <div class="row uniform 50%">
+                    <div class="6u 12u$(xsmall)">
+                        <h3>Item name</h3>
+                        <input type="text" name="itemName" id="itemName" value="" placeholder="Name of item" required />
+                    </div>
+
+                    <div class="6u$ 12u$(xsmall)">
+                        <h3>Item Quantity</h3>
+                        <input type="text" name="quan" id="quan" value="" placeholder="Quantity of item" required />
+                    </div>
+                    <div class="6u$ 12u$(xsmall)">
+                        <h3>Item Price</h3>
+                        <input type="number" name="itemPrice" id="itemPrice" value="" required />
+                    </div>
+                    <div class="container">
+                        <p>Upload a picture of item</p>
+                    </div>
+                    <input type="file" id="file" name="image"  required />
+                    <div class="12u$">
+                        <input type="submit" value="Enter Item" class="special">
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+</section>
+
