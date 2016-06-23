@@ -1,0 +1,36 @@
+﻿@model EAD_Project_ii_.Models.item
+@{
+    ViewBag.Title = "Delete Item";
+    Layout = "~/Views/Shared/_adminSharedPage.cshtml";
+}
+<section id="main" class="wrapper">
+    <div class="container-form">
+        <header class="major">
+            <h2>
+                <br>
+                Edit Item
+            </h2>
+        </header>
+        <section>
+            <form method="post" action="~/Product/delete/" enctype="multipart/form-data">
+                <div class="row uniform 50%">
+                    <div class="6u 12u$(xsmall)">
+                        <h3>Item name</h3>
+                          <input type="text" name="itemName" id="itemName" value="" placeholder="Name of item" required />
+                  </div>
+                    <div class="6u$ 12u$(xsmall)">
+                        <h3>Item Quantity</h3>
+                        <input type="text" name="quan" id="quan" value="" placeholder="Quantity of item" required />
+                    </div>
+                    <div class="6u$ 12u$(xsmall)">
+                        <h3>Item Price</h3>
+                        <input type="number" name="itemPrice" id="itemPrice" value="" required />
+                    </div>
+                    <div class="12u$">
+                        <input type="submit" value="Delete" class="special">
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+</section>
