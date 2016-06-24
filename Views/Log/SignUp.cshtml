@@ -1,0 +1,91 @@
+﻿@model EAD_Project_ii_.Models.user
+@{
+    ViewBag.Title = "loginSignup";
+    Layout = "~/Views/Shared/_logSharedView.cshtml";
+}
+
+<section id="main" class="wrapper">
+    <div class="container-form">
+        <header class="major">
+            <h2>Sign Up</h2>
+        </header>
+        <!-- Form -->
+        <section>
+            <form method="post" action="~/Log/doSignUp/" enctype="multipart/form-data">
+                <div class="row uniform 50%">
+                    <div class="6u 12u$(xsmall)">
+                        <p>Enter Name</p>
+                        <input type="text" name="name" id="name" value="" placeholder="Name" />
+                        @Html.ValidationMessageFor(model => model.name)
+                    </div>
+                    <div class="6u$ 12u$(xsmall)">
+                        <p>User Name</p>
+                        <input type="text" name="userName" id="userName" value="" placeholder="User Name" required />
+                        @Html.ValidationMessageFor(model => model.userName)
+                    </div>
+
+                    <div class="6u$ 12u$(xsmall)">
+                        <p>Email</p>
+                        <input type="email" name="email" id="email" value="" placeholder="Email" required />
+                        @Html.ValidationMessageFor(model => model.email)
+                    </div>
+                    <div class="6u$ 12u$(xsmall)">
+                        <p>Password</p>
+                        <input type="password" name="password" id="password" placeholder="Password" maxlength="10" required />
+                        @Html.ValidationMessageFor(model => model.password)
+                    </div>
+                    <!--div class="12u$">
+                            <textarea name="message" id="question" placeholder="Enter a secret question" rows="6"></textarea>
+                        </!--div-->
+                    <div class="12u$">
+                        <select name="securityQuestion">
+                            <option value="0" selected>Select Security Question</option>
+                            <option value="school">What was the name of your First school?</option>
+                            <option value="hero">Who is your all time favorite hero?</option>
+                        </select>
+                    </div>
+                    <div class="12u$">
+                        <textarea name="answer" id="answer" placeholder="Enter your answer" rows="6"></textarea>
+                        <div>@Html.ValidationMessageFor(model => model.answer)</div>
+                    </div>
+                    <div class="container">
+                        <p>Upload a profile picture</p>
+                    </div>
+                    <input type="file" id="file" name="image"  />
+                    <div class="12u$">
+                        <input type="submit" id="signup" value="Sign Up" class="special">
+                    </div>
+                </div>
+            </form>
+            <div id="unameError">
+                <p></p>
+            </div>
+            <div id="lengthError"></div>
+        </section>
+    </div>
+</section>
+@Scripts.Render("~/bundles/jquery")
+<script>
+
+    $(document).ready(function () {
+        $('#userName').focusout(function () {
+            var userName = $('#userName').val();
+            //alert('User Name ='+ userName);
+            $(":submit").attr("disabled", true);
+            $.getJSON("/Log/CheckUserName?userName=" + userName, function (data) {
+                //$('#checking').hide();
+                if (data) {
+                    document.getElementById("userName").style.border = '1px solid red';
+                    document.getElementById("unameError").textContent = "User name already exixts";
+                    document.getElementById("unameError").style.color = 'red';
+                }
+                else {
+                    $('#unameError').hide();
+                    document.getElementById("userName").style.border = 'solid 1px';
+                    $(":submit").attr("disabled", false);
+                }
+            });
+        });
+    });
+</script>
+
